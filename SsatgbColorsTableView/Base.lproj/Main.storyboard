@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a32-YH-iJf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a32-YH-iJf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Colors-->
+        <!--Notes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TableViewController" customModule="SsatgbColorsTableView" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h5Z-Np-O4d">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="Grc-ea-u1H" customClass="ColorTableViewCell" customModule="SsatgbColorsTableView" customModuleProvider="target">
@@ -55,7 +55,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Colors" id="J12-lN-eVX"/>
+                    <navigationItem key="navigationItem" title="Notes" id="J12-lN-eVX">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="EE0-mk-hb1">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZT0-Me-Uv9">
+                                <rect key="frame" x="276" y="0.0" width="83" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <segue destination="G2q-d4-64i" kind="show" identifier="newPage" id="Fi8-2Z-Of3"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="colorsTableView" destination="h5Z-Np-O4d" id="qiF-E3-CVY"/>
                         <outlet property="tableColorList" destination="h5Z-Np-O4d" id="6gy-F9-2ii"/>
@@ -73,29 +85,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3M5-2i-H9x">
-                                <rect key="frame" x="166" y="323" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Nje-Kl-M3i">
+                                <rect key="frame" x="16" y="158" width="343" height="367"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Q7-Io-K2I">
+                                <rect key="frame" x="170" y="572" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="t0B-GK-o2I"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QaB-p5-YAZ">
+                                <rect key="frame" x="16" y="63" width="343" height="30"/>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3M5-2i-H9x" firstAttribute="centerY" secondItem="aQS-4x-5R0" secondAttribute="centerY" id="CeL-xs-TtR"/>
-                            <constraint firstItem="3M5-2i-H9x" firstAttribute="centerY" secondItem="aQS-4x-5R0" secondAttribute="centerY" id="Che-xW-U8H"/>
-                            <constraint firstItem="3M5-2i-H9x" firstAttribute="centerX" secondItem="aQS-4x-5R0" secondAttribute="centerX" id="Mq5-4h-owm"/>
-                            <constraint firstItem="3M5-2i-H9x" firstAttribute="centerX" secondItem="aQS-4x-5R0" secondAttribute="centerX" id="scB-Zb-3xX"/>
+                            <constraint firstItem="QaB-p5-YAZ" firstAttribute="top" secondItem="aQS-4x-5R0" secondAttribute="top" constant="43" id="1vk-6x-ZaS"/>
+                            <constraint firstItem="Nje-Kl-M3i" firstAttribute="leading" secondItem="aQS-4x-5R0" secondAttribute="leading" constant="16" id="2S9-BM-GL5"/>
+                            <constraint firstItem="aQS-4x-5R0" firstAttribute="bottom" secondItem="Nje-Kl-M3i" secondAttribute="bottom" constant="289" id="3l8-3S-p9d"/>
+                            <constraint firstItem="aQS-4x-5R0" firstAttribute="trailing" secondItem="QaB-p5-YAZ" secondAttribute="trailing" constant="16" id="9Nd-BK-fer"/>
+                            <constraint firstItem="Nje-Kl-M3i" firstAttribute="top" secondItem="aQS-4x-5R0" secondAttribute="top" constant="94" id="QB3-Ln-AwT"/>
+                            <constraint firstItem="QaB-p5-YAZ" firstAttribute="leading" secondItem="aQS-4x-5R0" secondAttribute="leading" constant="16" id="Yiv-gD-Kan"/>
+                            <constraint firstItem="aQS-4x-5R0" firstAttribute="trailing" secondItem="Nje-Kl-M3i" secondAttribute="trailing" constant="16" id="eUK-yt-yiT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aQS-4x-5R0"/>
                     </view>
                     <connections>
-                        <outlet property="colorNameLabel" destination="3M5-2i-H9x" id="fgS-NW-rfv"/>
+                        <outlet property="colorNameLabel" destination="QaB-p5-YAZ" id="GaT-Jb-tbZ"/>
+                        <outlet property="textBox" destination="Nje-Kl-M3i" id="Yan-mY-64m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F70-dM-MzY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1818" y="34"/>
+            <point key="canvasLocation" x="1816.8" y="33.733133433283363"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ofm-MC-eSn">
@@ -116,4 +146,8 @@
             <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Fi8-2Z-Of3"/>
+        <segue reference="t0B-GK-o2I"/>
+    </inferredMetricsTieBreakers>
 </document>

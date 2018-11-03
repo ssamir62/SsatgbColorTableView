@@ -10,21 +10,39 @@ import UIKit
 
 class ColorDetailViewController: UIViewController {
 
-    @IBOutlet weak var colorNameLabel: UILabel!
-    var color: Color?
+    var datas: [CellStruct]?
+    var index: Int?
     
+    
+    @IBOutlet weak var colorNameLabel: UITextField!
     
     override func viewDidLoad() {
      
         super.viewDidLoad()
         
-        colorNameLabel.text = color?.name
-        self.view.backgroundColor = color?.UIColor
-        self.title = color?.name
+        colorNameLabel.text = datas?[index!].name
+        textBox.text = datas?[index!].data
     }
-
+    
+    
+    @IBOutlet weak var textBox: UITextView!
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? TableViewController{
+            datas?[index!].name = colorNameLabel.text ?? ""
+            datas?[index!].data = textBox.text ?? ""
+            
+            destination.dataCell = datas!
+            
+            
+        }
+    }
+    
 }

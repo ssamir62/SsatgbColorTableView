@@ -8,29 +8,30 @@
 
 import UIKit
 
-struct Color {
+struct CellStruct {
     var name: String
-    var UIColor: UIColor
+    var data: String
 }
 
 class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableColorList: UITableView!
-    var colors = [Color]()
-    var newColor: String = ""
+    var dataCell = [CellStruct]()
     
    
     @IBOutlet weak var colorsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        // colors = ["red", "orange", "yellow", "green", "blue", "purple", "brown"]
+       
         
-        colors = [Color(name: "Red", UIColor: UIColor.red), Color(name: "Orange", UIColor: UIColor.orange), Color(name: "Yellow", UIColor: UIColor.yellow), Color(name: "Green", UIColor: UIColor.green), Color(name: "Blue", UIColor: UIColor.blue), Color(name: "Purple", UIColor: UIColor.purple)]
+        if dataCell.count == 0{
+        
+            self.dataCell = [CellStruct(name: "11/1/2018", data:"Test")]
+            
+        }
         
         tableColorList.delegate = self
-        
         tableColorList.dataSource = self
     }
 
@@ -48,14 +49,13 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return colors.count
+        return dataCell.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath as IndexPath) as! ColorTableViewCell
         
-        cell.ColorLabel?.text = colors[indexPath.row].name
-        cell.backgroundColor = colors[indexPath.row].UIColor
+        cell.ColorLabel?.text = dataCell[indexPath.row].name
         cell.selectionStyle = .none 
         return cell
     }
@@ -63,10 +63,29 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
   
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? ColorDetailViewController,
-            let row = colorsTableView.indexPathForSelectedRow?.row{
-            destination.color = colors[row]
-        }
+        if let destination = segue.destination as? ColorDetailViewController{
+            
+            if segue.identifier == "newPage" {
+                
+                dataCell.append(CellStruct(name: "", data: ""))
+                destination.datas = dataCell
+                destination.index = dataCell.count - 1
+                
+            }
+                
+            else{
+                if let row = colorsTableView.indexPathForSelectedRow?.row{
+                    destination.datas = dataCell
+                    destination.index = row
+            
+            
+                
+                
+            }
+            
+            
+         }
+      }
     }
 
 }

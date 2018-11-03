@@ -16,6 +16,7 @@
 		E06F6623215EBFE900568611 /* SsatgbColorsTableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06F6622215EBFE900568611 /* SsatgbColorsTableViewUITests.swift */; };
 		E06F6633215EC82A00568611 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06F6632215EC82A00568611 /* ColorTableViewCell.swift */; };
 		E0C55C28217A877200F8962E /* ColorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C55C27217A877200F8962E /* ColorDetailViewController.swift */; };
+		E0FF649A218D16C400974438 /* SsatgbColorsTableView.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0FF6498218D16C400974438 /* SsatgbColorsTableView.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		E06F6624215EBFE900568611 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E06F6632215EC82A00568611 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
 		E0C55C27217A877200F8962E /* ColorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetailViewController.swift; sourceTree = "<group>"; };
+		E0FF6499218D16C400974438 /* SsatgbCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SsatgbCoreData.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		E06F6601215EBFE700568611 /* SsatgbColorsTableView */ = {
 			isa = PBXGroup;
 			children = (
+				E0FF6498218D16C400974438 /* SsatgbColorsTableView.xcdatamodeld */,
 				E06F6602215EBFE700568611 /* AppDelegate.swift */,
 				E06F6604215EBFE700568611 /* TableViewController.swift */,
 				E06F6606215EBFE700568611 /* Main.storyboard */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E06F6605215EBFE700568611 /* TableViewController.swift in Sources */,
+				E0FF649A218D16C400974438 /* SsatgbColorsTableView.xcdatamodeld in Sources */,
 				E06F6603215EBFE700568611 /* AppDelegate.swift in Sources */,
 				E06F6633215EC82A00568611 /* ColorTableViewCell.swift in Sources */,
 				E0C55C28217A877200F8962E /* ColorDetailViewController.swift in Sources */,
@@ -592,6 +596,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E0FF6498218D16C400974438 /* SsatgbColorsTableView.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E0FF6499218D16C400974438 /* SsatgbCoreData.xcdatamodel */,
+			);
+			currentVersion = E0FF6499218D16C400974438 /* SsatgbCoreData.xcdatamodel */;
+			path = SsatgbColorsTableView.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E06F65F7215EBFE700568611 /* Project object */;
 }
